@@ -12,9 +12,10 @@ email: tyler.p@digipen.edu
 twitter_username: Tyler_Pugmire
 github_username:  tyler-pugmire
 gplus_username:  lorem_ipsum
+youtube_username: TheTylersaurusrex
 
 # Google-analytics
 google-analytics:
-  id: ""
+  id: "UA-111860466-1"
 
 exclude: ['package.json', 'src' , 'node_modules']
