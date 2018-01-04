@@ -3522,7 +3522,7 @@ sub,sup{
     flex-direction:column;
     justify-content:space-between;
     width:90%;
-    max-width:960px;
+    max-width:1100px;
     margin:0 auto
 }
 @media only screen and (min-width:550px){
@@ -3561,7 +3561,7 @@ sub,sup{
         width:48%
     }
     .images-right img{
-        float:right
+        float:right;
     }
     .images-left{
         float:left;
@@ -3608,4 +3608,77 @@ sub,sup{
     margin:0;
     color:#fff
 }
- 
+.img-right{
+    float: right;
+}
+
+.slideshow-container {
+    max-width: 550px;
+    position: relative;
+    margin: auto;
+}
+.slide{
+    display: none;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.dot {
+    cursor:pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+.play-button{
+    width: 64px;
+    height: 64px;
+    margin-left: -32px;
+    margin-top: -32px;
+    cursor: pointer;
+}
+.play-button-icon{
+    width:64px;
+	display:block;
+	height:64px;
+	border-radius: 4px;
+	transition: .3s;
+	background:url(../img/play-button.png) no-repeat 0 0;
+	background-color: rgba(0,0,0,0.75);
+    top: 50%;
+    right: 50%;
+}
+.button-centerer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+}
+.dot-container{
+    text-align:center;
+}
+  
