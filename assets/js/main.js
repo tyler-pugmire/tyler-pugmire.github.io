@@ -67,3 +67,12 @@ function showDivs(divObject, n) {
     divObject.dots[divObject.slideIndex-1].className += " active";
 }
 
+function showVideo(videoURL){
+    var element = document.createElement("div");
+    element.className = "fullscreen";
+    console.log(videoURL);
+    element.innerHTML = "<iframe width='420' height='315' src='" + videoURL + "' frameborder='0' allowfullscreen></iframe>";
+    var parent = document.getElementById("projects");
+    parent.appendChild(element);
+}
+

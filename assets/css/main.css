@@ -3681,4 +3681,10 @@ sub,sup{
 .dot-container{
     text-align:center;
 }
+.fullscreen{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+}
   
