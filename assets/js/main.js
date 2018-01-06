@@ -99,10 +99,10 @@ function showContactForm() {
     video.className = "form-bg";
     video.innerHTML = " <h1>Contact Me</h1>\
                         <form action='https://formspree.io/tyler.pugmire@yahoo.com' method='POST'>\
-                            <input id='name' placeholder='Name' type='text' required /> \
-                            <input id='email' placeholder='Email' type='email' required /> \
-                            <input id='subject' placeholder='Subject' type='text' required /> \
-                            <textarea id='msg' placeholder='Message'></textarea> \
+                            <input name='name' id='name' placeholder='Name' type='text' required /> \
+                            <input name='replyto' id='email' placeholder='Email' type='email' required /> \
+                            <input name='subject' id='subject' placeholder='Subject' type='text' required /> \
+                            <textarea name='message' id='msg' placeholder='Message'></textarea> \
                             <input class='project-link' type='submit' value='Send' /> \
                         </form>";
     objBody.appendChild(overlay);
