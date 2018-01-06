@@ -3365,7 +3365,7 @@ sub,sup{
     }
 }
 #particles-js{
-    background:#1a222c;
+    background:#181818;/*#1a222c;*/
     display:flex;
     vertical-align:bottom;
     width:100%;
@@ -3681,10 +3681,25 @@ sub,sup{
 .dot-container{
     text-align:center;
 }
-.fullscreen{
+.overlay{
+    width: 1903px;
+    height: 9557px;
+    opacity: 0.8;
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    background-color: #000;
+}
+.center-video{
+    position: fixed;
     left: 50%;
     top: 50%;
-    z-index: 3;
+    z-index: 100;
+    text-align: center;
+    line-height: 0;
+    margin:0 auto;
+    margin-left:-640px;
+    margin-top:-360px;
 }
   
