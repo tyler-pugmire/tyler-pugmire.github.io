@@ -79,15 +79,43 @@ var overlay;
 var video;
 
 function showVideo(videoURL){
+    var objBody = document.getElementsByTagName("body").item(0);
     overlay = document.createElement("div");
     overlay.className = "overlay";
     overlay.onclick = function() {removeVideo(); };
-    var objBody = document.getElementsByTagName("body").item(0);
     video = document.createElement("div");
     video.className = "center-video";
     video.innerHTML = "<iframe width='1280' height='720' src='" + videoURL + "' frameborder='0' allowfullscreen></iframe>";
     objBody.appendChild(overlay);
     objBody.appendChild(video);
+}
+
+function showContactForm() {
+    var objBody = document.getElementsByTagName("body").item(0);
+    overlay = document.createElement("div");
+    overlay.className = "overlay";
+    overlay.onclick = function() { removeVideo(); };
+    video = document.createElement("div");
+    video.className = "form-bg";
+    video.innerHTML = " <h1>Contact Me</h1>\
+                        <form action='https://formspree.io/tyler.pugmire@yahoo.com' method='POST'>\
+                            <input id='name' placeholder='Name' type='text' required /> \
+                            <input id='email' placeholder='Email' type='email' required /> \
+                            <input id='subject' placeholder='Subject' type='text' required /> \
+                            <textarea id='msg' placeholder='Message'></textarea> \
+                            <input class='project-link' type='submit' value='Send' /> \
+                        </form>";
+    objBody.appendChild(overlay);
+    objBody.appendChild(video);
+}
+
+function checkEmpty() {
+    if (document.getElementById('name').value == "" || document.getElementById('email').value == "" || document.getElementById('msg').value == "") {
+        alert("Fill All Fields !");
+    } else {
+    document.getElementById('form').submit();
+        alert("Form Submitted Successfully...");
+    }
 }
 
 function removeVideo() {
