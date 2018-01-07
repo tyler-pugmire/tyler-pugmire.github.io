@@ -3674,7 +3674,7 @@ sub,sup{
     z-index: 90;
     background-color: #000;
 }
-.center-video{
+.center-video, iframe{
     position: fixed;
     left: 50%;
     top: 50%;
@@ -3688,7 +3688,7 @@ sub,sup{
     border:3px solid #404459;
     border-radius:10px;
     padding: 2em;
-    width: 400px;
+    width: 600px;
     text-align: center;
     background: #fff;
     position: fixed;
@@ -3698,29 +3698,76 @@ sub,sup{
     z-index: 100;
 }
 .form-bg h1{
-    padding:20px 35px;
+    padding:0px 0px;
     margin:-10px -50px;
     text-align:center;
-    border-radius:10px 10px 0 0
+    border-radius:0 0 0 0;
+    color:#333;
+}
+.form-bg form{
+    width: 400px;
+    float:left;
 }
 input, textarea { 
     margin-top:15px;
     margin-left: 15px;
+    margin-right: 5px;
     font-family: inherit; 
     text-transform: inherit; 
     font-size: inherit;
     border:1px solid #ccc;
     display: block; 
-    width: 82%; 
+    width: 83%; 
     padding: 10px;
     float:center;
 }
 textarea { height: 100px; resize: none; }
 input, text {
-    width:82%;
+    width:83%;
     padding:10px;
     margin-top:15px;
     margin-left: 15px;
+    margin-right: 5px;
     border:1px solid #ccc;
     font-size:16px;
+}
+.contact-info {
+    text-align:left;
+}
+.contact-info p{
+    margin: 0 0;
+}
+.contact-info h3 {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    -webkit-margin-after: 0;
+}
+ul.contact-info{
+    list-style: none;
+}
+ul.contact-info li{
+    display:inline;
+}
+ul.icons{
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+    font-size:18px;
+    margin-top:0px;
+    margin-bottom:0px;
+
+}
+ul.icons a{
+    color:#555;    
+    margin-right:5px;
+    text-decoration: none;
+    border-radius:50%;
+    border:2px solid #555;
+    transition:all .7s;
+    padding:5px;
+}
+ul.icons a:active,ul.icons a:hover{
+    background:#555;
+    color:#fff
 }

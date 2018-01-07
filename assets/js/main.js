@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, false);
 
+var overlay
+
+window.onload = function () { 
+    overlay = new Overlay();
+    overlay.init();
+};
+
 var slideshowsObjs = [];
 var autoTimeout;
 createSliderObjects();
@@ -75,39 +82,45 @@ function showDivs(divObject, n) {
     divObject.dots[divObject.slideIndex-1].className += " active";
 }
 
-var overlay;
-var video;
+function Overlay(){
+    this.body;
+    this.overlay;
+    this.videoDiv;
+    this.videoEmbed;
+    this.contactForm;
 
-function showVideo(videoURL){
-    var objBody = document.getElementsByTagName("body").item(0);
-    overlay = document.createElement("div");
-    overlay.className = "overlay";
-    overlay.onclick = function() {removeVideo(); };
-    video = document.createElement("div");
-    video.className = "center-video";
-    video.innerHTML = "<iframe width='1280' height='720' src='" + videoURL + "' frameborder='0' allowfullscreen></iframe>";
-    objBody.appendChild(overlay);
-    objBody.appendChild(video);
+    this.init = function() {
+        this.body = document.getElementsByTagName("body").item(0);
+        this.overlay = document.getElementById('overlay');
+        this.contactForm = document.getElementById('contact-form');
+        this.videoDiv = document.getElementById('video');
+        this.videoEmbed = document.getElementById('embed');
+        this.videoEmbed.onload = function() { overlay.videoDiv.style.display='block'; }
+    };
+
+    this.showVideo = function(videoUrl) {
+        if (this.videoEmbed.src !== videoUrl) {
+            this.videoEmbed.src = videoUrl;
+        }
+        else {
+            overlay.videoDiv.style.display='block';
+        }
+        this.overlay.style.display='block';
+    };
+
+    this.showContactForm = function() {
+        this.overlay.style.display='block';
+        this.contactForm.style.display='block';
+    };
+
+    this.hideOverlay = function() {
+        this.overlay.style.display='none';
+        this.contactForm.style.display='none';
+        this.videoDiv.style.display='none';
+    };
 }
 
-function showContactForm() {
-    var objBody = document.getElementsByTagName("body").item(0);
-    overlay = document.createElement("div");
-    overlay.className = "overlay";
-    overlay.onclick = function() { removeVideo(); };
-    video = document.createElement("div");
-    video.className = "form-bg";
-    video.innerHTML = " <h1>Contact Me</h1>\
-                        <form action='https://formspree.io/tyler.pugmire@yahoo.com' method='POST'>\
-                            <input name='name' id='name' placeholder='Name' type='text' required /> \
-                            <input name='replyto' id='email' placeholder='Email' type='email' required /> \
-                            <input name='subject' id='subject' placeholder='Subject' type='text' required /> \
-                            <textarea name='message' id='msg' placeholder='Message'></textarea> \
-                            <input class='project-link' type='submit' value='Send' /> \
-                        </form>";
-    objBody.appendChild(overlay);
-    objBody.appendChild(video);
-}
+/*
 
 function checkEmpty() {
     if (document.getElementById('name').value == "" || document.getElementById('email').value == "" || document.getElementById('msg').value == "") {
@@ -117,9 +130,4 @@ function checkEmpty() {
         alert("Form Submitted Successfully...");
     }
 }
-
-function removeVideo() {
-    var objBody = document.getElementsByTagName("body").item(0);
-    objBody.removeChild(overlay);
-    objBody.removeChild(video);
-}
+ */

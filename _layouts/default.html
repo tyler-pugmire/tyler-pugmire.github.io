@@ -11,4 +11,46 @@
       </section>
         {{ content }}
       {% include footer.html %}
+      <section>
+        <div class='overlay' id='overlay' onclick="overlay.hideOverlay()" style='display:none'>
+        </div>
+        <div class'center-video' id='video' style='display:none'>
+            <iframe id='embed' width='1280' height='720' src='https://www.youtube.com/embed/pzAz0MfQV_o' frameborder='0' allowfullscreen></iframe>;
+        </div>
+        <div class='form-bg' id='contact-form' style='display:none'>
+          <h1>Contact Me</h1>
+          <section>
+            <form action='https://formspree.io/tyler.pugmire@yahoo.com' method='POST'>
+              <input name='name' id='name' placeholder='Name' type='text' required /> 
+                <input name='replyto' id='email' placeholder='Email' type='email' required /> 
+                <input name='subject' id='subject' placeholder='Subject' type='text' required /> 
+                <textarea name='message' id='msg' placeholder='Message'></textarea>
+                <input class='project-link' type='submit' value='Send' />
+            </form>
+            <ul class='contact-info'>
+              <li>
+                <h3>Email</h3>
+                <p>{{site.email}}</p>
+              </li>
+              <li>
+                <h3>Social</h3>
+                <ul class='icons'>
+                  <li>
+                    <a href="https://twitter.com/{{site.twitter_username}}" class="icon fa fa-twitter"></a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/user/{{site.youtube_username}}" class="icon fa fa-youtube"></a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/{{site.github_username}}" class="icon fa fa-github"></a>
+                  </li>
+                  <li>
+                    <a href="https://linkedin.com/in/{{site.linkedin_username}}" class="icon fa fa-linkedin-square"></a>
+                  </li>
+                </ul>
+              </li>
+            </div>
+          </section>
+        </div>
+      </section>
   </body>
